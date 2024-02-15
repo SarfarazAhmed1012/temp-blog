@@ -1,12 +1,7 @@
 import React from "react";
-import FacebookAuthComponent from "../components/FacebookButton";
 
 const Home = () => {
-  return (
-    <div>
-      <FacebookAuthComponent />
-    </div>
-  );
+  return <div>home</div>;
 };
 
 export default Home;
