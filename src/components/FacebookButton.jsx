@@ -1,18 +1,25 @@
 import React from "react";
-import FacebookLogin from "react-facebook-login";
+import { FacebookProvider, LoginButton } from "react-facebook";
 
 const FacebookButton = () => {
-  const responseFacebook = (response) => {
-    console.log(response);
-  };
+  function handleSuccess(response) {
+    console.log(response.status);
+  }
+
+  function handleError(error) {
+    console.log(error);
+  }
 
   return (
-    <FacebookLogin
-      appId="366700416143572"
-      autoLoad={false}
-      fields="name,email,picture"
-      callback={responseFacebook}
-    />
+    <FacebookProvider appId="366700416143572">
+      <LoginButton
+        scope="email"
+        onError={handleError}
+        onSuccess={handleSuccess}
+      >
+        Login via Facebook
+      </LoginButton>
+    </FacebookProvider>
   );
 };
 

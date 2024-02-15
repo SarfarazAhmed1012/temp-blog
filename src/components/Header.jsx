@@ -3,7 +3,7 @@ import { Button, Navbar, TextInput } from "flowbite-react";
 import { Link, useLocation } from "react-router-dom";
 import { AiOutlineSearch } from "react-icons/ai";
 import { FaMoon } from "react-icons/fa";
-import FacebookAuthComponent from "./FacebookButton";
+import FacebookButton from "./FacebookButton";
 const Header = () => {
   const path = useLocation().pathname;
   console.log(path);
@@ -41,7 +41,7 @@ const Header = () => {
         <Navbar.Toggle />
       </div>
       <div>
-        <FacebookAuthComponent />
+        <FacebookButton />
       </div>
       <Navbar.Collapse>
         <Navbar.Link as={"div"} active={path === "/"}>
